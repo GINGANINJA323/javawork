@@ -2,6 +2,14 @@ package uk.ac.uos.i2p.s201951;
 
 public class ConditionalWork {
 	
+	public static String printOutcome(boolean outcome, String name) {
+		if (outcome) {
+			return("Condition " + name + " is true");
+		} else {
+			return("Condition " + name + " is false");
+		}
+	}
+	
 	public static void main(String[] args) {
 		
 		// Part 1:
@@ -33,6 +41,55 @@ public class ConditionalWork {
 		if (passed) { //Implied boolean check.
 			System.out.println("Congratulations!");
 		}
+		
+		//Part 3:
+		
+		boolean i1 = true;
+		boolean i2 = true;
+		boolean i3 = true;
+		
+		if (i1 || i2 || i3) {
+			System.out.println("A");
+			System.out.println(printOutcome(i1, "i1"));
+			System.out.println(printOutcome(i2, "i2"));
+			System.out.println(printOutcome(i3, "i3"));
+		}
+		
+		if (i1 && i2 && i3) {
+			System.out.println("B");
+			System.out.println(printOutcome(i1, "i1"));
+			System.out.println(printOutcome(i2, "i2"));
+			System.out.println(printOutcome(i3, "i3"));
+		}
+		
+		if (i1 || (i2 && i3)) {
+			System.out.println("C");
+			System.out.println(printOutcome(i1, "i1"));
+			System.out.println(printOutcome(i2, "i2"));
+			System.out.println(printOutcome(i3, "i3"));
+		}
+		
+		if ((i1 && i2) || (i2 && i3)) {
+			System.out.println("D");
+			System.out.println(printOutcome(i1, "i1"));
+			System.out.println(printOutcome(i2, "i2"));
+			System.out.println(printOutcome(i3, "i3"));
+		}
+		
+		if ((i1 && (i2 || i3)) || (i2 && i3)) {
+			System.out.println("E");
+			System.out.println(printOutcome(i1, "i1"));
+			System.out.println(printOutcome(i2, "i2"));
+			System.out.println(printOutcome(i3, "i3"));
+		}
+		
+		if ((i1 && i2) && i3 == false) {
+			System.out.println("F");
+			System.out.println(printOutcome(i1, "i1"));
+			System.out.println(printOutcome(i2, "i2"));
+			System.out.println(printOutcome(i3, "i3"));
+		}
+		
 	}
 
 }
