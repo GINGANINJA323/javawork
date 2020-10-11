@@ -44,7 +44,7 @@ public class ConditionalWork {
 		
 		//Part 3:
 		
-		boolean i1 = true;
+		boolean i1 = false;
 		boolean i2 = true;
 		boolean i3 = true;
 		
